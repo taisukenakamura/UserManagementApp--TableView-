@@ -25,6 +25,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fja-Bs-bH0" id="B0A-Rn-Na0">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -33,7 +34,7 @@
                             <outlet property="delegate" destination="3er-hX-z1Y" id="IrS-FB-mfB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ユーザーリスト" id="fcS-yu-wV7"/>
+                    <navigationItem key="navigationItem" title="ユーザーリスト" id="fcS-yu-wV7" colorLabel="IBBuiltInLabel-Yellow"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showResult" id="yN7-Gx-hRx"/>
                     </connections>
@@ -61,7 +62,6 @@
         <!--ユーザーデータ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UserManagementApp_TableView_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -126,8 +126,10 @@
                         <outlet property="nameLabel" destination="60y-It-R6m" id="P28-oq-ZHJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="640.57971014492762" y="268.52678571428572"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

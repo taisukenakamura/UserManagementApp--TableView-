@@ -33,6 +33,10 @@ class TableViewController: UITableViewController {
         
     ]
 
+    
+    var resultName : String = ""
+    var resultInfo : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,5 +59,23 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        resultName = names[indexPath.row]
+        resultInfo = hobbies[indexPath.row]
+        
+        performSegue(withIdentifier: "showResult", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "showResult", let vc = segue.destination as? ViewController else{
+            return
+        }
+        vc.listName = resultName
+        vc.info = resultInfo
+        
+        
+    }
 
 }

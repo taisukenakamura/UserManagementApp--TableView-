@@ -14,9 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
+    var listName : String = ""
+    var info : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        nameLabel.text = listName
+        infoLabel.text = info
     }
 
 

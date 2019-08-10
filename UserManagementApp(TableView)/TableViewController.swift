@@ -33,7 +33,7 @@ class TableViewController: UITableViewController {
         
     ]
 
-    
+//    VCに渡すための変数を初期化しておく
     var resultName : String = ""
     var resultInfo : String = ""
     
@@ -44,34 +44,36 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+//    セルの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 14
     }
-    
+//    セルにう向けて代入する値を定義
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
         
         // Configure the cell...
+//        セルのテキストラベルに名前のデータの配列を順番に入れていく
         cell.textLabel?.text = names[indexPath.row]
         
         return cell
     }
-    
+//    セルを押した後の処理を実行する
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+//        VCに受け渡しを行うための変数にそれぞれのデータを代入していく
         resultName = names[indexPath.row]
         resultInfo = hobbies[indexPath.row]
-        
+//        segueによる遷移を実行するコード
         performSegue(withIdentifier: "showResult", sender: nil)
     }
-    
+//    遷移前に行われる処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+//        segueのidentifierが合致するかどうかの確認と遷移先のクラス名の確認を行い、相違する場合をはじく
         guard segue.identifier == "showResult", let vc = segue.destination as? ViewController else{
             return
         }
+//        guard文を通過した場合にVCで初期化して定義しておいた変数に代入する
         vc.listName = resultName
         vc.info = resultInfo
         

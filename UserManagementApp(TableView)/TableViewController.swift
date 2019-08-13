@@ -11,9 +11,9 @@ import UIKit
 class TableViewController: UITableViewController {
     
     
-    //    名前データ
+    // 名前データ
     var names : [String] = ["中村泰輔","永井優","小野勇輔","豊岡正紘","分目祐太","金田祐作","甲斐崎香","志賀大河","津國由莉子","堀田真","田内翔太郎","福沢貴一","平田奈那","吉澤優衣"]
-    //    趣味データ
+    // 趣味データ
     
     var hobbies : [String] = [
         "サッカー、カラオケ、旅行、食事、飲酒等基本楽しければなんでも好きです。\n ポンコツという自負を持っている",
@@ -33,7 +33,7 @@ class TableViewController: UITableViewController {
         
     ]
 
-// VCに渡すための変数を初期化しておく
+    // VCに渡すための変数を初期化しておく
     var resultName : String = ""
     var resultInfo : String = ""
     
@@ -44,36 +44,36 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-// セルの数
+    // セルの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 14
     }
-// セルにう向けて代入する値を定義
+    // セルにう向けて代入する値を定義
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
         
         
-// セルのテキストラベルに名前のデータの配列を順番に入れていく
+        // セルのテキストラベルに名前のデータの配列を順番に入れていく
         cell.textLabel?.text = names[indexPath.row]
         
         return cell
     }
-// セルを押した後の処理を実行する
+    // セルを押した後の処理を実行する
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-// VCに受け渡しを行うための変数にそれぞれのデータを代入していく
+        // VCに受け渡しを行うための変数にそれぞれのデータを代入していく
         resultName = names[indexPath.row]
         resultInfo = hobbies[indexPath.row]
-// segueによる遷移を実行するコード
+        // segueによる遷移を実行するコード
         performSegue(withIdentifier: "showResult", sender: nil)
     }
-// 遷移前に行われる処理
+    // 遷移前に行われる処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-// segueのidentifierが合致するかどうかの確認と遷移先のクラス名の確認を行い、相違する場合をはじく
+        // segueのidentifierが合致するかどうかの確認と遷移先のクラス名の確認を行い、相違する場合をはじく
         guard segue.identifier == "showResult", let vc = segue.destination as? ViewController else {
             return
         }
-// guard文を通過した場合にVCで初期化して定義しておいた変数に代入する
+        // guard文を通過した場合にVCで初期化して定義しておいた変数に代入する
         vc.listName = resultName
         vc.info = resultInfo
     

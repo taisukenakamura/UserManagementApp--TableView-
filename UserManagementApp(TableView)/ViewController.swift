@@ -9,19 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-//    名前のラベルとの紐付け
+    // 名前のラベルとの紐付け
     @IBOutlet weak var nameLabel: UILabel!
-//    自由欄のラベルとの紐付け
+    // 自由欄のラベルとの紐付け
     @IBOutlet weak var infoLabel: UILabel!
-//    それぞれ代入するテキストの初期化
+    // それぞれ代入するテキストの初期化
     var listName : String = ""
     var info : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        それぞれへの代入
+        // それぞれへの代入
         nameLabel.text = listName
         infoLabel.text = info
     }
